@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Simple_Notepad</string>
+    <string name="addNoteButton">Nouvelle note</string>
+    <string name="mainHeader">Nous notes</string>
+    <string name="CtxMenuHeader">Choose action</string>
+    <string name="updateNoteButton">Mise à jour Note</string>
+    <string name="validation">Se il vous plaît remplir le titre et/ou domaine contenu</string>
+    
+    <!-- createview layout -->
+    <string name="noteTitle">Le titre de la note</string>
+    <string name="noteContent">Le contenu de la note</string>
+    <string name="saveNoteButton">Enregistrer la note</string>
+    
+        
+    <!-- context menu options -->
+    <string name="showNote">Voir la note</string>
+    <string name="editNote">Modifier la note</string>
+    <string name="removeNote">Retirer la note</string>
+    
+    <string name="titleHint">Entrez le titre ici</string>
+
+</resources>

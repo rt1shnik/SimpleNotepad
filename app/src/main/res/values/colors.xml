@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <color name="back_btn">#dd4d342f</color>
+    <color name="transparent">#00000000</color>
+    <color name="background_fragment">#44000000</color>
+    <color name="inpent">#ee8b7d7d</color>
+    <color name="back_btn_pressed">#ff2c1915</color>
+</resources>
