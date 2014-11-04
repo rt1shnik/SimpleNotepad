@@ -117,11 +117,4 @@ public class CreateNote extends Activity {
 		});
 	}
 
-	@Override
-	protected void onPause() {
-		super.onPause();
-		dbhelper.close();
-	}
-	
-
 }

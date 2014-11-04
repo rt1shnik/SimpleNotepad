@@ -3,7 +3,7 @@
 
     <string name="app_name">Simple_Notepad</string>
     <string name="addNoteButton">Nouvelle note</string>
-    <string name="mainHeader">Nous notes</string>
+    <string name="mainHeader">Mes Notes</string>
     <string name="CtxMenuHeader">Choose action</string>
     <string name="updateNoteButton">Mise à jour Note</string>
     <string name="validation">Se il vous plaît remplir le titre et/ou domaine contenu</string>
