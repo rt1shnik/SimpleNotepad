@@ -5,7 +5,11 @@ package com.moczul.notepad;
  * twitter_url: http://twitter.com/#!/moczul
  */
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -61,7 +65,10 @@ public class DBHelper extends SQLiteOpenHelper {
 		ContentValues cv = new ContentValues();
 		cv.put("noteTitle", title);
 		cv.put("noteContent", content);
-		cv.put("date", new Date().toString());
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy", Locale.FRANCE);
+        String date = dateFormat.format(calendar.getTime());
+		cv.put("date", date);
 		
 		//inserting the note to database
 		db.insert(TABLE_NAME, null, cv);
