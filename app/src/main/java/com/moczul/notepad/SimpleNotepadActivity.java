@@ -70,6 +70,14 @@ public class SimpleNotepadActivity extends Activity implements
         // setting that longclick on listview will open the context menu
         this.registerForContextMenu(noteList);
 
+        View backButton = findViewById(R.id.go_to_prev_page);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
         // onClicklistener for our "new note" button
         // click on button will open CreateNote Activity
         addNoteBtn.setOnClickListener(new View.OnClickListener() {

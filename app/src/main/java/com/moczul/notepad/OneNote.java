@@ -11,6 +11,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class OneNote extends Activity {
@@ -71,6 +73,14 @@ public class OneNote extends Activity {
 		noteTitle.setText(title);
 		noteContent.setText(content);
 		createdAt.setText(date);
+
+        View backButton = findViewById(R.id.go_to_prev_page);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 	}
 	
 

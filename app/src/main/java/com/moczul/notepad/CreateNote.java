@@ -40,6 +40,14 @@ public class CreateNote extends Activity {
 		super.onCreate(savedInstanceState);
 		
 		setContentView(R.layout.createlayout);
+
+        View backButton = findViewById(R.id.go_to_prev_page);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 		
 		//binding views from layout to variable
 		//quite simple, huh ? :)
