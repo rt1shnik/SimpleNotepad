@@ -9,15 +9,16 @@
     <string name="validation">Se il vous plaît remplir le titre et/ou domaine contenu</string>
     
     <!-- createview layout -->
-    <string name="noteTitle">Le titre de la note</string>
-    <string name="noteContent">Le contenu de la note</string>
-    <string name="saveNoteButton">Enregistrer la note</string>
+    <string name="noteTitle">Titre de la note</string>
+    <string name="noteContent">Contenu de la note</string>
+    <string name="saveNoteButton">Enregistrer</string>
+    <string name="pasDeNote">Aucune note enregistrée</string>
     
         
     <!-- context menu options -->
     <string name="showNote">Voir la note</string>
     <string name="editNote">Modifier la note</string>
-    <string name="removeNote">Retirer la note</string>
+    <string name="removeNote">Supprimer la note</string>
     
     <string name="titleHint">Entrez le titre ici</string>
 
