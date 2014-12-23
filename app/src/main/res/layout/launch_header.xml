@@ -40,7 +40,7 @@
             android:gravity="center"
             android:padding="5dip"
             android:singleLine="true"
-            android:text="Note"
+            android:text="Notes"
             android:textStyle="bold"
             android:textColor="#626f75"
             android:textSize="26sp" />

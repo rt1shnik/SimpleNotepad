@@ -12,14 +12,6 @@
         layout="@layout/launch_header"
         android:layout_marginBottom="5dp"/>
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/mainHeader"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
     <ListView
         android:id="@+id/noteList"
         android:layout_width="fill_parent"
