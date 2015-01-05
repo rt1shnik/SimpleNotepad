@@ -155,7 +155,7 @@ public class SimpleNotepadActivity extends Activity implements
     protected void onPause() {
         super.onPause();
 
-        requestToShowArrow();
+        requestToShowArrow(this);
     }
 
     // this method is called when user long clicked on listview
@@ -274,8 +274,8 @@ public class SimpleNotepadActivity extends Activity implements
         return mPadding;
     }
 
-    public static void requestToShowArrow() {
+    public static void requestToShowArrow(Activity instance) {
         Intent intent = new Intent("com.louka.launcher.sosbutton.show");
-        mInstance.sendBroadcast(intent);
+        instance.sendBroadcast(intent);
     }
 }

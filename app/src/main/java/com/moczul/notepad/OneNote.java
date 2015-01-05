@@ -99,6 +99,6 @@ public class OneNote extends Activity {
     protected void onPause() {
         super.onPause();
 
-        SimpleNotepadActivity.requestToShowArrow();
+        SimpleNotepadActivity.requestToShowArrow(this);
     }
 }

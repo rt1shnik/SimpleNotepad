@@ -135,6 +135,6 @@ public class CreateNote extends Activity {
     protected void onPause() {
         super.onPause();
 
-        SimpleNotepadActivity.requestToShowArrow();
+        SimpleNotepadActivity.requestToShowArrow(this);
     }
 }
