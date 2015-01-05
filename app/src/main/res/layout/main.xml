@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootView"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:background="@drawable/background_7"
-    android:paddingBottom="@dimen/sos_margin_bottom">
+    android:background="@drawable/background_7">
 
     <include
         android:layout_width="fill_parent"
@@ -24,6 +24,7 @@
         android:id="@+id/addNote"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
         android:text="@string/addNoteButton" />
 
 </LinearLayout>

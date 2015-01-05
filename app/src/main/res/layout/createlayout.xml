@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootView"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/background_7"
@@ -48,17 +49,17 @@
             <EditText
                 android:id="@+id/ContentEditText"
                 android:layout_width="fill_parent"
+                android:gravity="top"
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine"
-                android:lines="4" >
+                android:lines="3" >
             </EditText>
+
+            <Button
+                android:id="@+id/addNoteToDB"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/saveNoteButton" />
         </LinearLayout>
     </ScrollView>
-
-    <Button
-        android:id="@+id/addNoteToDB"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/saveNoteButton" />
-
 </LinearLayout>

@@ -125,4 +125,16 @@ public class CreateNote extends Activity {
 		});
 	}
 
+    @Override
+    protected void onResume() {
+        SimpleNotepadActivity.requestForGetPaddindForSosButton();
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        SimpleNotepadActivity.requestToShowArrow();
+    }
 }

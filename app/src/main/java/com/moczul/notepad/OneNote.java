@@ -81,7 +81,24 @@ public class OneNote extends Activity {
                 finish();
             }
         });
-	}
-	
 
+        setPadding();
+	}
+
+    private void setPadding() {
+        findViewById(R.id.rootView).setPadding(0, 0, 0, SimpleNotepadActivity.getmPadding());
+    }
+
+    @Override
+    protected void onResume() {
+        SimpleNotepadActivity.requestForGetPaddindForSosButton();
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        SimpleNotepadActivity.requestToShowArrow();
+    }
 }

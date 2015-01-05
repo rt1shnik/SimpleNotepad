@@ -22,8 +22,7 @@
             android:name=".OneNote" >
         </activity>
         <activity
-            android:name=".CreateNote"
-            android:windowSoftInputMode="adjustResize">
+            android:name=".CreateNote">
         </activity>
     </application>
 

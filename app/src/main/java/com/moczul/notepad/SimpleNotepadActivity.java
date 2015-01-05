@@ -8,10 +8,14 @@ package com.moczul.notepad;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -28,7 +32,8 @@ import android.widget.TextView;
 
 public class SimpleNotepadActivity extends Activity implements
         OnItemClickListener {
-
+    private static int mPadding;
+    private static SimpleNotepadActivity mInstance;
     // Tag for debugging
     private static final String TAG = "notepad";
 
@@ -56,6 +61,9 @@ public class SimpleNotepadActivity extends Activity implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        mInstance = this;
+
         setContentView(R.layout.main);
 
         noteList = (ListView) findViewById(R.id.noteList);
@@ -131,7 +139,6 @@ public class SimpleNotepadActivity extends Activity implements
         noteList.setAdapter(adapter);
         // setting listener to the listView
         noteList.setOnItemClickListener(this);
-
     }
 
     // always when we start this activity we want to refresh the list of notes
@@ -139,6 +146,16 @@ public class SimpleNotepadActivity extends Activity implements
     protected void onResume() {
         super.onResume();
 		setNotes();
+
+        reqisterRecieverToGetPadding();
+        requestForGetPaddindForSosButton();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        requestToShowArrow();
     }
 
     // this method is called when user long clicked on listview
@@ -212,4 +229,53 @@ public class SimpleNotepadActivity extends Activity implements
         startActivity(mIntent);
     }
 
+    public static void requestForGetPaddindForSosButton() {
+        Intent intent = new Intent("com.louka.launcher.sosbutton.padding");
+        mInstance.sendBroadcast(intent);
+    }
+
+    private void reqisterRecieverToGetPadding() {
+        final PaddingReciever paddingReciever = new PaddingReciever();
+        IntentFilter intentFilter = new IntentFilter("launcher.send.padding.for.sos.button");
+        getApplication().registerReceiver(paddingReciever, intentFilter);
+        Handler handler = new Handler();
+        Runnable runnable = new Runnable() {
+
+            @Override
+            public void run() {
+                getApplication().unregisterReceiver(paddingReciever);
+            }
+        };
+        handler.postDelayed(runnable, 2000);
+    }
+
+    // Send back broadcast with padding for SOS button state.
+    public static class PaddingReciever extends BroadcastReceiver {
+        private final String PADDING = "padding";
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (intent.hasExtra(PADDING)) {
+                int padding = intent.getIntExtra(PADDING, 0);
+                setPadding(padding);
+            }
+        }
+
+        private void setPadding(int padding2) {
+            if (mInstance != null) {
+                mInstance.getWindow().getDecorView().findViewById(R.id.rootView)
+                        .setPadding(0, 0, 0, padding2);
+                mPadding = padding2;
+            }
+        }
+    }
+
+    public static int getmPadding() {
+        return mPadding;
+    }
+
+    public static void requestToShowArrow() {
+        Intent intent = new Intent("com.louka.launcher.sosbutton.show");
+        mInstance.sendBroadcast(intent);
+    }
 }
