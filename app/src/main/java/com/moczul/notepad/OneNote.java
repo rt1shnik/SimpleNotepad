@@ -12,6 +12,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class OneNote extends Activity {
 	
@@ -98,5 +99,11 @@ public class OneNote extends Activity {
         super.onPause();
 
         SimpleNotepadActivity.requestToHideButton(this);
+    }
+
+    public void home(View view){
+        Intent i = new Intent(Intent.ACTION_MAIN);
+        i.addCategory(Intent.CATEGORY_HOME);
+        startActivity(i);
     }
 }

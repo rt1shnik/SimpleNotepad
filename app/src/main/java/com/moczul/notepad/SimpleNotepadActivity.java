@@ -29,6 +29,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SimpleNotepadActivity extends Activity implements
         OnItemClickListener {
@@ -278,4 +279,11 @@ public class SimpleNotepadActivity extends Activity implements
         Intent intent = new Intent("com.louka.launcher.sosbutton.hide");
         instance.sendBroadcast(intent);
     }
+
+    public void home(View view){
+        Intent i = new Intent(Intent.ACTION_MAIN);
+        i.addCategory(Intent.CATEGORY_HOME);
+        startActivity(i);
+    }
+
 }

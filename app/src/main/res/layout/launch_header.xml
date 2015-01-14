@@ -27,8 +27,9 @@
             android:layout_centerVertical="true"
             android:adjustViewBounds="true"
             android:padding="5dp"
-            android:clickable="false"
-            android:src="@drawable/header_logo_selector" />
+            android:clickable="true"
+            android:src="@drawable/header_home_selector"
+            android:onClick="home"/>
 
         <TextView
             android:id="@+id/title"

@@ -137,4 +137,11 @@ public class CreateNote extends Activity {
 
         SimpleNotepadActivity.requestToHideButton(this);
     }
+
+    public void home(View view){
+        Intent i = new Intent(Intent.ACTION_MAIN);
+        i.addCategory(Intent.CATEGORY_HOME);
+        startActivity(i);
+    }
+
 }
