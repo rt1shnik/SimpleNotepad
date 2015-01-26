@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Simple_Notepad</string>
+    <string name="app_name">Sidonie Notepad</string>
     <string name="addNoteButton">Nouvelle note</string>
     <string name="mainHeader">Mes Notes</string>
     <string name="CtxMenuHeader">Choose action</string>
