@@ -30,6 +30,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.moczul.notepad.utils.Styling;
+
 public class SimpleNotepadActivity extends Activity implements
         OnItemClickListener {
     private static int mPadding;
@@ -67,7 +69,12 @@ public class SimpleNotepadActivity extends Activity implements
         setContentView(R.layout.main);
 
         noteList = (ListView) findViewById(R.id.noteList);
-        addNoteBtn = (Button) findViewById(R.id.addNote);
+
+        addNoteBtn = (Button) Styling.updateWithFont(
+                this,
+                (TextView)findViewById(R.id.addNote),
+                Styling.Fonts.LATO_BOLD
+        );
 
         // initialization of database helper
         dbhelper = new DBHelper(this);

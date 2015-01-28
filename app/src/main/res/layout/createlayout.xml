@@ -57,8 +57,7 @@
 
             <Button
                 android:id="@+id/addNoteToDB"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
+                style="@style/validerButton"
                 android:text="@string/saveNoteButton" />
         </LinearLayout>
     </ScrollView>

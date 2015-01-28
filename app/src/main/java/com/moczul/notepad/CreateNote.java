@@ -14,7 +14,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.moczul.notepad.utils.Styling;
 
 public class CreateNote extends Activity {
 	
@@ -51,8 +54,12 @@ public class CreateNote extends Activity {
 		
 		//binding views from layout to variable
 		//quite simple, huh ? :)
-		addNoteToDB = (Button) findViewById(R.id.addNoteToDB);
-		titleEditText = (EditText) findViewById(R.id.TitleEditText);
+		addNoteToDB = (Button) Styling.updateWithFont(
+                this, (TextView) findViewById(R.id.addNoteToDB),
+                Styling.Fonts.LATO_BOLD
+        );
+
+        titleEditText = (EditText) findViewById(R.id.TitleEditText);
 		contentEditText = (EditText) findViewById(R.id.ContentEditText);
 		
 		//initialization of DBHelper
