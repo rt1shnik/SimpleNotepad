@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <dimen name="sos_margin_bottom">100dp</dimen>
     <!-- list -->
     <dimen name="list_horizontal_padding">5dp</dimen>
     <dimen name="list_min_item_height">64dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
 </resources>

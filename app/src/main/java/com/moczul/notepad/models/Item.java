@@ -1,6 +1,5 @@
-package com.moczul.notepad;
+package com.moczul.notepad.models;
 
-// item object will represent one item on notelist
 public class Item {
 	
 	private int id;

@@ -1,4 +1,4 @@
-package com.moczul.notepad;
+package com.moczul.notepad.utils;
 
 /**
  * @author Michał Moczulski
@@ -17,8 +17,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBHelper extends SQLiteOpenHelper {
+    private static DBHelper me;
 
-	private Context ctx;
 	//version of database
 	private static final int version = 1;
 	//database name
@@ -34,10 +34,17 @@ public class DBHelper extends SQLiteOpenHelper {
 	private static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + " (id INTEGER PRIMARY KEY AUTOINCREMENT, "+KEY_TITLE+" TEXT NOT NULL, "+KEY_CONTENT+" TEXT NOT NULL, "+KEY_DATE+" TEXT);";
 	
 	//contructor of DBHelper
-	public DBHelper(Context context) {
+	private DBHelper(Context context) {
 		super(context, DB_NAME, null, version);
-		this.ctx = context;
 	}
+
+    public synchronized static DBHelper getInstance(Context c) {
+        if(me==null) {
+            me = new DBHelper(c);
+        }
+
+        return me;
+    }
 
 	//creating the table in database
 	@Override
@@ -79,18 +86,6 @@ public class DBHelper extends SQLiteOpenHelper {
 		//see that all database connection stuff is inside this method
 		//so we don't need to open and close db connection outside this class
 		
-	}
-	
-	
-	//getting all notes
-	public Cursor getNotes(SQLiteDatabase db) {
-		//db.query is like normal sql query
-		//cursor contains all notes 
-		Cursor c = db.query(TABLE_NAME, new String[] {KEY_TITLE, KEY_CONTENT}, null, null, null, null, "id DESC");
-		//moving to the first note
-		c.moveToFirst();
-		//and returning Cursor object
-		return c;
 	}
 	
 	public Cursor getNotes2(SQLiteDatabase db) {
