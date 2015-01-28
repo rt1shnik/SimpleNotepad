@@ -29,7 +29,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class SimpleNotepadActivity extends Activity implements
         OnItemClickListener {
@@ -136,7 +135,7 @@ public class SimpleNotepadActivity extends Activity implements
 
         // creating new adapter
         adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, titles);
+                R.layout.list_item, titles);
         noteList.setAdapter(adapter);
         // setting listener to the listView
         noteList.setOnItemClickListener(this);
